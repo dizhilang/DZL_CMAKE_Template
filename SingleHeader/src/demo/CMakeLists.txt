@@ -1,0 +1,12 @@
+﻿SET(LIB_NAME SingleHeaderDemo)
+
+file(GLOB_RECURSE HEADERS "*.h" "*.hpp")
+file(GLOB_RECURSE SOURCES "*.cpp" "*.cc" "*.c")
+
+SET(ALLFILES ${SOURCES} ${HEADERS})
+
+ADD_EXECUTABLE(${LIB_NAME} ${ALLFILES})
+
+target_INCLUDE_DIRECTORIES(${LIB_NAME} PRIVATE ${INCDIR})
+
+set_property(TARGET ${LIB_NAME} PROPERTY FOLDER SingleHeader)
